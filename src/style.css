@@ -1,12 +1,171 @@
 :root {
+  --dark-mode-font-color: rgba(240, 240, 240, 1);
+  --dark-mode-bckg-color: rgba(32, 33, 36, 0.8);
+  --light-mode-font-color: rgba(32, 33, 36, 1);
+  --light-mode-bckg-color: rgba(240, 240, 240, 0.8);
+
+  --icon-height: 20px;
+  --icon-width: 20px;
+
+  --logo-gap: 10px;
+  --nav-sidebar-gap: 30px;
+  --icon-text-gap: 20px;
+
+  --row-gap-sidebar: 20px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-image: url('./img/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px 50px;
+}
+
+.header {
+  color: rgba(240, 240, 240, 1);
+  height: fit-content;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+}
+
+.settings {
+  margin-left: auto;
+  color: var(--dark-mode-font-color);
+}
+
+.user-settings {
+  display: flex;
+  column-gap: var(--nav-sidebar-gap);
+}
+
+.user-settings li {
+  /* background-color: var(--dark-mode-bckg-color); */
+  padding: 5px 20px;
+  font-weight: 700;
+  border-radius: 50px;
+  width: 100px;
+}
+
+.theme,
+.help,
+.logo,
+.menu-pair,
+.user-list li,
+.project-list li,
+.task-header {
+  display: flex;
+}
+
+.menu-pair {
+  column-gap: 10px;
+}
+
+.logo {
+  column-gap: var(--logo-gap);
+}
+
+.theme,
+.help {
+  column-gap: 5px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  box-shadow: 0 0 50px 1px rgb(2, 14, 17);
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: fit-content;
+  row-gap: var(--row-gap-sidebar);
+  min-width: 300px;
+  border-right: 1px solid rgba(241, 236, 196, 0.8);
+  border-right-style: inset;
+}
+
+.task-container {
+  grid-column: 2 / -1;
+  background-color: rgba(235, 229, 189, 0.8);
+}
+
+.task-header {
+  column-gap: var(--icon-text-gap);
+  padding: 0 10px 20px 10px;
+}
+
+.sidebar,
+.task-container {
+  padding: 30px 20px;
+}
+
+.user-list,
+.project-list {
+  display: grid;
+  row-gap: var(--row-gap-sidebar);
+}
+
+.user-list {
+  grid-template-rows: repeat(3, 16px);
+}
+
+.project-list {
+  grid-template-rows: 16px;
+}
+
+.task-number {
+  margin-left: auto;
+  padding-right: 10px;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-mode-font-color);
+}
+
+.dark {
+  color: var(--dark-mode-font-color);
+  background-color: var(--dark-mode-bckg-color);
+  fill: var(--dark-mode-font-color);
+}
+
+.light {
+  color: var(--light-mode-font-color);
+  background-color: var(--light-mode-bckg-color);
+  fill: var(--light-mode-font-color);
+}
+
+li {
+  list-style-type: none;
 }
 
 h1 {
-  color: green;
+  font-size: 3rem;
+}
+
+svg {
+  height: var(--icon-height);
+  width: var(--icon-width);
+}
+
+hr {
+  height: 1px;
 }
