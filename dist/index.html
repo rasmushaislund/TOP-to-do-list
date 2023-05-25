@@ -4,11 +4,98 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TO-DO APP</title>
-    <script defer src="runtime.js"></script>
-    <script defer src="index.js"></script>
-  </head>
+    <title>TODODODO APP</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300&family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+  <script defer src="main.js"></script></head>
   <body>
-    <h1>Hello</h1>
+    <div class="header">
+      <div class="logo">
+        <img
+          class="logo-image"
+          src="img/github-logo-white.4c2be9f4828f8c89fdca.svg"
+          alt="TODODODO logo"
+        />
+        <h1 class="logo-name">TODODODO</h1>
+      </div>
+      <div class="settings">
+        <ul class="user-settings">
+          <li>
+            <div class="theme">
+              <svg></svg>
+              <p>Light</p>
+            </div>
+          </li>
+          <li>
+            <div class="help">
+              <svg></svg>
+              <p>Help</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="sidebar light">
+        <div class="user-menu">
+          <ul class="user-list">
+            <li>
+              <svg></svg>
+            </li>
+            <li>
+              <div class="menu-pair">
+                <svg></svg>
+                <p class="menu-para">Today</p>
+              </div>
+              <p class="task-number">2</p>
+            </li>
+            <li>
+              <div class="menu-pair">
+                <svg></svg>
+                <p class="menu-para">Important</p>
+              </div>
+              <p class="task-number">2</p>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="project-menu">
+          <ul class="project-list">
+            <li>
+              <div class="menu-pair">
+                <svg></svg>
+                <p class="menu-para">Projects</p>
+              </div>
+              <p class="task-number">2</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="task-container">
+        <div class="task-header">
+          <svg></svg>
+          <div class="project-name">Projects</div>
+          <svg></svg>
+        </div>
+        <div class="task-list">
+          <div class="add-task">
+            <svg></svg>
+            <div class="task-info">
+              <p>Title</p>
+              <p>Deadline</p>
+              <p>Description</p>
+            </div>
+            <svg></svg>
+            <svg></svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
