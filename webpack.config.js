@@ -5,6 +5,13 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    // If more than one entry point is used, runtimeChunk must be set to 'single'
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 1000,
+    ignored: /node_modules/,
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -12,19 +19,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'TO-DO APP',
       template: './src/index.html',
       inject: 'head',
     }),
   ],
   output: {
-    filename: '[name].js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    assetModuleFilename: 'img/[name].[hash][ext]',
   },
-  optimization: {
-    runtimeChunk: 'single',
-  },
+  // // optimization: {
+  // //   runtimeChunk: 'single',
+  // },
   module: {
     rules: [
       {
@@ -34,12 +41,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-        use: {
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'img',
-          },
-        },
       },
       {
         test: /\.html$/i,
