@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODODODO APP</title>
+    <title>TO✼DO APP</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300&family=Roboto:wght@100;400&display=swap"
       rel="stylesheet"
@@ -13,28 +13,32 @@
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <img
-          class="logo-image"
-          src="./img/github-logo-white.svg"
-          alt="TODODODO logo"
-        />
-        <h1 class="logo-name">TODODODO</h1>
+        <img class="logo-image" src="./img/logo.svg" alt="TODODODO logo" />
+        <h1 class="logo-name">TO✼DO</h1>
       </div>
       <div class="settings">
         <ul class="user-settings">
-          <li>
+          <!-- <li>
             <div class="theme">
-              <svg></svg>
+              <img class="icon-img" src="./img/moon.svg" alt="theme icon"/>
               <p>Light</p>
             </div>
-          </li>
+          </li> -->
           <li>
             <div class="help">
-              <svg></svg>
+              <img
+                class="icon-img"
+                src="./img/support-white.svg"
+                alt="help icon"
+              />
               <p>Help</p>
             </div>
           </li>
@@ -42,27 +46,39 @@
       </div>
     </div>
     <div class="main-container">
-      <div class="sidebar light">
+      <div class="sidebar">
         <div class="user-menu">
           <ul class="user-list">
             <li>
-              <div class="menu-pair">
-                <svg></svg>
+              <div class="menu-pair hamburger">
+                <img
+                  class="icon-img"
+                  src="./img/menu.svg"
+                  alt="menu pop-in pop-out icon"
+                />
               </div>
             </li>
             <li>
               <div class="menu-pair">
-                <svg></svg>
+                <img
+                  class="icon-img"
+                  src="./img/calender.svg"
+                  alt="calender icon for today link"
+                />
                 <p class="menu-para">Today</p>
               </div>
-              <p class="task-number">2</p>
+              <p class="task-number today-task-number">2</p>
             </li>
             <li>
               <div class="menu-pair">
-                <svg></svg>
+                <img
+                  class="icon-img"
+                  src="./img/star-outline.svg"
+                  alt="important icon"
+                />
                 <p class="menu-para">Important</p>
               </div>
-              <p class="task-number">2</p>
+              <p class="task-number important-task-number">2</p>
             </li>
           </ul>
         </div>
@@ -71,42 +87,94 @@
           <ul class="project-list">
             <li>
               <div class="menu-pair">
-                <svg></svg>
+                <img
+                  class="icon-img"
+                  src="./img/bullet-list.svg"
+                  alt="bullet list icon"
+                />
                 <p class="menu-para">Projects</p>
               </div>
-              <p class="task-number">2</p>
+              <p class="task-number projects-task-number">2</p>
+            </li>
+            <li>
+              <div class="menu-pair">
+                <img
+                  class="icon-img add-project-image"
+                  src="#"
+                  alt="plus icon for adding new project"
+                />
+                <input
+                  type="text"
+                  id="add-project"
+                  placeholder="+ New project"
+                  name="add-project"
+                  maxlength="150"
+                />
+              </div>
             </li>
           </ul>
         </div>
       </div>
       <div class="task-container">
         <div class="task-header">
-          <svg></svg>
+          <img
+            class="icon-img header-img"
+            src="./img/bullet-list.svg"
+            alt="icon for project header in task section"
+          />
           <div class="project-name">Projects</div>
-          <svg></svg>
+          <img
+            class="icon-img dots-img"
+            src="./img/dots-horizontal.svg"
+            alt="dots icon for expanding controls"
+          />
+          <ul class="project-settings">
+            <li>Project settings</li>
+            <hr />
+            <li>
+              <div class="project-setting-actions">
+                <img
+                  class="icon-img"
+                  src="./img/edit-outline.svg"
+                  alt="calender icon for today link"
+                />
+                <p class="menu-para">Rename project</p>
+              </div>
+            </li>
+            <li>
+              <div class="project-setting-actions">
+                <img
+                  class="icon-img"
+                  src="./img/delete.svg"
+                  alt="calender icon for today link"
+                />
+                <p class="menu-para">Delete project</p>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="task-list">
           <div class="add-task">
-            <input id="task-checkbox" type="checkbox" />
+            <input id="add-task-checkbox" type="checkbox" />
             <div class="task-info">
               <ul class="task-ul">
                 <li>
                   <input
                     type="text"
-                    id="title"
                     class="task-title"
-                    placeholder="Add a title"
+                    placeholder="Add a task title"
                     name="title"
                     maxlength="150"
                   />
                 </li>
-                <li>
-                  <input
-                    id="date"
-                    class="task-date"
-                    type="date"
-                    placeholder="Choose deadline"
+                <li class="deadline-li">
+                  <img
+                    class="icon-img date-pick-icon"
+                    src="./img/calender.svg"
+                    alt="calender icon for choosing task deadline"
                   />
+                  <p class="deadline-para">hello</p>
+                  <input class="task-date" type="date" name="date" />
                 </li>
                 <li>
                   <textarea
@@ -120,9 +188,55 @@
             </div>
             <div class="task-actions">
               <button id="add-task-btn" type="button">+ Add</button>
-              <!-- <svg></svg>
-              <svg></svg>
-              <svg></svg> -->
+            </div>
+          </div>
+          <div class="task-card">
+            <input class="checkbox" id="task-checkbox" type="checkbox" />
+            <div class="task-info">
+              <ul class="task-ul">
+                <li>
+                  <input
+                    type="text"
+                    class="task-title"
+                    placeholder="Add a task title"
+                    name="title"
+                    maxlength="150"
+                  />
+                </li>
+                <li>
+                  <img
+                    class="icon-img"
+                    src="./img/calender.svg"
+                    alt="calender icon for choosing task deadline"
+                  />
+                  <input class="task-date" type="date" name="date" />
+                </li>
+                <li>
+                  <textarea
+                    rows="1"
+                    maxlength="400"
+                    placeholder="Add description here..."
+                    wrap="soft"
+                  ></textarea>
+                </li>
+              </ul>
+            </div>
+            <div class="task-actions">
+              <img
+                class="icon-img"
+                src="./img/edit-outline.svg"
+                alt="edit task icon"
+              />
+              <img
+                class="icon-img"
+                src="./img/star-outline.svg"
+                alt="add to important category icon"
+              />
+              <img
+                class="icon-img"
+                src="./img/delete.svg"
+                alt="delete task icon"
+              />
             </div>
           </div>
         </div>
